@@ -1,0 +1,8 @@
+package com.easttobuy;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient("CATEGORY_SERVICE")
+public interface CategoryClientService {
+
+}

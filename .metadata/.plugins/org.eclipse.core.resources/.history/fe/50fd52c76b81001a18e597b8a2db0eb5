@@ -1,0 +1,33 @@
+package com.easttobuy;
+
+import java.util.Locale;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.webmvc.PersistentEntityResourceAssembler;
+import org.springframework.data.rest.webmvc.RepositoryRestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+@RepositoryRestController
+public class ProductRestController {
+	
+	  @Autowired 
+	  private CategoryClient categoryClient;
+	 
+	 
+	@GetMapping("/api/{categoryId}")
+    public ResponseEntity<Category> findAll(@PathVariable("categoryId") Integer categoryId, HttpServletRequest request, Locale locale,
+            PersistentEntityResourceAssembler resourceAssembler) {
+		System.out.println("categoryId"+categoryId);
+		
+		  Category category=categoryClient.findByCategoryId(categoryId);
+		  System.out.println(category.toString());
+		 
+				return null;
+        
+    }
+
+}

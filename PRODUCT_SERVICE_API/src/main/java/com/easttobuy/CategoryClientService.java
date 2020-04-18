@@ -1,0 +1,11 @@
+package com.easttobuy;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+@FeignClient("CATEGORY_SERVICE")
+public interface CategoryClientService {
+	@GetMapping("/category/search/getByCategoryID/{categoryId}")
+	Category findByCategoryId(@PathVariable("categoryId")Integer categoryId);
+}

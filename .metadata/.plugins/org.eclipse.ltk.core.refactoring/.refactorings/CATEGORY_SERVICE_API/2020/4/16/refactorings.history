@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Category.java&apos; to &apos;PRODUCT_SERVICE_API/src/main/java/com.easttobuy&apos;&#x0D;&#x0A;- Original project: &apos;CATEGORY_SERVICE_API&apos;&#x0D;&#x0A;- Destination element: &apos;PRODUCT_SERVICE_API/src/main/java/com.easttobuy&apos;&#x0D;&#x0A;- Original element: &apos;com.easttobuy.Category.java&apos;" description="Copy compilation unit" destination="=PRODUCT_SERVICE_API/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.easttobuy" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.easttobuy{Category.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1587199069372" units="1" version="1.0"/>
+</session>
