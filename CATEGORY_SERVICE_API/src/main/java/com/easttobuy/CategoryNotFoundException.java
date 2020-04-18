@@ -1,6 +1,6 @@
 package com.easttobuy;
 
-public class BookNotFoundException extends Exception {
+public class CategoryNotFoundException extends Exception {
 
 	/**
 	 * 

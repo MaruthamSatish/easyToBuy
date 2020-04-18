@@ -1,34 +1,22 @@
 package com.easttobuy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.rest.webmvc.BasePathAwareController;
-import org.springframework.data.rest.webmvc.RepositoryRestController;
-import org.springframework.hateoas.EntityModel;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@RepositoryRestController
-@BasePathAwareController
+@RestController
+@RequestMapping("productAPI")
 public class ProductRestController {
-
-	@Autowired
-	private CategoryClientService categoryClient;
-
-	@RequestMapping(path = "/category", method = RequestMethod.GET, produces = "application/hal+json")
-	public @ResponseBody ResponseEntity<?> findAll(@PathVariable("categoryId") Integer categoryId) {
-		System.out.println("categoryId" + categoryId);
-		Category category = categoryClient.findByCategoryId(categoryId);
-        EntityModel<Category> resource = new EntityModel<Category>(category);
-      
-       
-        System.out.println(resource);
-		System.out.println(category.toString());
-
-		return null;
-
-	}
-
+    @Autowired
+	ProductRepository productRepository;
+    @GetMapping("/products")
+    public List<Product> getAllProducts(){
+    	List<Product>  getProducts= new ArrayList<>();
+    	productRepository.findAll().forEach(product->getProducts.add(product));
+    	return getProducts;
+    }
 }
