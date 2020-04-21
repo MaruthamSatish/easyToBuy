@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: PRODUCT_SERVICE
+  zipkin:    base-url: http://localhost:9411/
+  sleuth:    sampler:      probability: 1
+ 
+
   datasource:
     password: root
     url: jdbc:mysql://localhost:3306/microservices
@@ -10,8 +14,16 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-eureka:         #tells about the Eureka server details and its refresh time
- 
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+eureka:
+ client:
+   serviceUrl:
+      defaultZone: http://localhost:8761/eureka/    
+            
+       
+    
+    
+      
+
+    
+
+        

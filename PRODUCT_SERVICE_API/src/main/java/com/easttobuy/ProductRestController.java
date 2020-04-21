@@ -9,14 +9,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("productAPI")
+@RequestMapping("/productAPI")
 public class ProductRestController {
-    @Autowired
-	ProductRepository productRepository;
-    @GetMapping("/products")
-    public List<Product> getAllProducts(){
-    	List<Product>  getProducts= new ArrayList<>();
-    	productRepository.findAll().forEach(product->getProducts.add(product));
-    	return getProducts;
-    }
+
+	@Autowired
+   ProductRepository productRepository;
+
+	
+	/*
+	 * @Autowired private CouponClient couponClient;
+	 */
+	@GetMapping("/products")
+	public List<Product> getAllProducts() {
+		List<Product> getProducts = new ArrayList<>();
+		productRepository.findAll().forEach(product -> getProducts.add(product));
+		System.out.println("getProducts" + getProducts.size());
+		return getProducts;
+	}
+
+	/*
+	 * @PostMapping public ResponseEntity<Product> create(@RequestBody Product
+	 * product) { Coupon coupon =
+	 * couponClient.findByCouponCode(product.getCouponCode());
+	 * product.setDiscountAmount(coupon.getDiscount()); return
+	 * ResponseEntity.ok(productRepository.save(product)); }
+	 * 
+	 * @GetMapping("/products/{categoryId}") public List<Product>
+	 * getAllProductsByCategoryId(@PathVariable("categoryId") Integer couponCode) {
+	 * List<Product> getProducts = new ArrayList<>();
+	 * productRepository.findByCategoryId(couponCode).forEach(product ->
+	 * getProducts.add(product)); System.out.println("getProducts" +
+	 * getProducts.size()); return getProducts; }
+	 */
+
 }

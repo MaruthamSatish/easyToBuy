@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: CATEGORY_SERVICE
+  zipkin:
+    base-url: http://localhost:9411/
+  sleuth:
+    sampler:
+      probability: 1
   datasource:
     password: root
     url: jdbc:mysql://localhost:3306/microservices

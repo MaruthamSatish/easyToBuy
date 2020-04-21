@@ -3,6 +3,8 @@
  */
 package com.easttobuy;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,8 +18,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "product")
-public class Product {
-    @Id
+public class Product implements Serializable {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer productId;
     @Column(name = "productName")
@@ -30,6 +36,11 @@ public class Product {
 	private String productImage;
     @Column(name = "categoryId")
 	private Integer categoryId;
+    @Column(name = "discountAmount")
+    private Double discountAmount;
+    @Column(name = "couponCode")
+    private String couponCode;
+	
 	public Integer getProductId() {
 		return productId;
 	}
@@ -66,7 +77,18 @@ public class Product {
 	public void setCategoryId(Integer categoryId) {
 		this.categoryId = categoryId;
 	}
-	
+	public Double getDiscountAmount() {
+		return discountAmount;
+	}
+	public void setDiscountAmount(Double discountAmount) {
+		this.discountAmount = discountAmount;
+	}
+	public String getCouponCode() {
+		return couponCode;
+	}
+	public void setCouponCode(String couponCode) {
+		this.couponCode = couponCode;
+	}
 	
 
 }

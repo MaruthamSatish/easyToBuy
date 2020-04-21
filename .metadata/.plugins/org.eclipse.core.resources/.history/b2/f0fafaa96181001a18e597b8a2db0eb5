@@ -1,8 +1,0 @@
-package com.easttobuy;
-
-import org.springframework.data.rest.core.annotation.RestResource;
-
-@RepositoryRestController
-public class ProductRestController {
-
-}
