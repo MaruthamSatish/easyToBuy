@@ -1,0 +1,32 @@
+<!--Main Navigation-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo  fixed-top scrolling-navbar">
+    <mdb-navbar-brand>
+        <a class="navbar-brand" href="#"><img id="Easy Buy" src="../assets/Easy Buy/linkedin_banner_image_1.png"
+                alt="Easy Buy" class="logoImage"></a>
+    </mdb-navbar-brand>
+    
+    <links>
+    <ul class="navbar-nav mr-auto mt-lg-0">
+            <li class="nav-item"  *ngFor="let tempCat of categories">
+                <a class="nav-link" routerLink="/{{tempCat.categoryName}}/{{tempCat.categoryResourceId}}" (click)="productsByCategory(tempCat)">{{tempCat.categoryName}}</a>
+            </li>
+        </ul>
+        <ul><li>
+                <form class="form-inline waves-effect waves-light">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                  
+                </form>
+            </li></ul>
+        
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+            <li class="nav-item">
+              <a class="nav-link">
+                <i class="fa fa-shopping-cart fa-3x cartIcon"></i>
+               
+              </a>
+            </li>
+     
+           
+          </ul>
+    </links>
+</mdb-navbar>
