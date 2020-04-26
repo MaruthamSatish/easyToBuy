@@ -7,7 +7,7 @@ spring:
     sampler:
       probability: 1
   application:
-    name: COUPON_SERVICE
+    name: coupon-service
   datasource:
     password: root
     url: jdbc:mysql://localhost:3306/microservices

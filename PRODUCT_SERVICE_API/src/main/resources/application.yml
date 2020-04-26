@@ -2,7 +2,7 @@ server:
   port: 8082
 spring:
   application:
-    name: PRODUCT_SERVICE
+    name: product-service
   zipkin:    base-url: http://localhost:9411/
   sleuth:    sampler:      probability: 1
  

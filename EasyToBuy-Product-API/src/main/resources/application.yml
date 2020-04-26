@@ -1,0 +1,13 @@
+server:
+  port: 8085
+spring:
+ 
+  application:
+    name: product-service
+  datasource:
+    password: ${MYSQL_PASSWORD}
+    url: jdbc:mysql://${DB_SERVER}/${MYSQL_DB}
+    username: ${MYSQL_USER}
+  jpa:
+    hibernate:
+      ddl-auto: update
