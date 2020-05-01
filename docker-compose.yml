@@ -12,7 +12,7 @@ services:
     volumes:
       - easytobuy-data:/var/lib/mysql/data
     ports:
-      - 3306:3306 # Forward the exposed port 3306 on the container to port 5432 on the host machine
+      - 3307:3307 # Forward the exposed port 3306 on the container to port 5432 on the host machine
 
     #Environment variable for DB name, user and password
     environment:
@@ -32,6 +32,7 @@ services:
       - MYSQL_DB=microservices
       - MYSQL_USER=root
       - MYSQL_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=root
 
     ports:
       - 8085:8085 # Forward the exposed port 8080 on the container to port 8080 on the host machine

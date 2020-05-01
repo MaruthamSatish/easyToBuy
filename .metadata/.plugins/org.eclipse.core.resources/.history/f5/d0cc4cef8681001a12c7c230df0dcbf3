@@ -1,5 +1,0 @@
-package com.easttobuy;
-
-public class BookNotFoundException extends Exception {
-
-}
