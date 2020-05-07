@@ -1,5 +1,5 @@
 version: '3.7'
-services: 
+services:
   easytobuy-mysql:
     image: mysql:5.7
     restart: always
@@ -12,10 +12,13 @@ services:
       - easytobuy-volume:/var/lib/mysql
     networks:
       - easytobuy-network
+  
   easytobuy-app:
-    build: ./CATEGORY_SERVICE_API
+    build: ./
+      #context: ./
+      #dockerfile: Dockerfile
     ports:
-      - "8081:8081"
+      - "8086:8086"
     restart: always
     depends_on: # Start the depends_on first
       - easytobuy-mysql 
@@ -27,16 +30,7 @@ services:
       RDS_PASSWORD: root
     networks:
       - easytobuy-network
-#Fron-End Easy To Buy
-  easytobuy-ui:
-    build: ./FRONTEND
-    container_name: easytobuy-ui
-    ports:
-      - 4200:80
-    networks:
-      - easytobuy-network
-
-#Volumes for DB data
+# Volumes
 volumes:
   easytobuy-volume:
 
