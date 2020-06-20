@@ -30,10 +30,18 @@ public class Product implements Serializable {
 	private String productName;
 	@Column(name = "productDesc")
 	private String productDesc;
+	@Column(name = "categoryId")
+	private Integer categoryId;
+	
+public Integer getCategoryId() {
+		return categoryId;
+	}
 
-	@Column(name = "productPrice")
+	public void setCategoryId(Integer categoryId) {
+		this.categoryId = categoryId;
+	}
 
-	public Integer getProductId() {
+public Integer getProductId() {
 		return productId;
 	}
 

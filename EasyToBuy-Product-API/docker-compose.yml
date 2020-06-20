@@ -10,13 +10,12 @@ services:
       MYSQL_DATABASE: microservices
     volumes:
       - easytobuy-volume:/var/lib/mysql
-    networks:
+    networks: 
       - easytobuy-network
   
   easytobuy-app:
     build: ./
-      #context: ./
-      #dockerfile: Dockerfile
+       
     ports:
       - "8086:8086"
     restart: always

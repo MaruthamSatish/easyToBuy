@@ -1,12 +1,22 @@
-server.port=8086
-spring.application.name= easyToBuy
-spring.datasource.driver-class-name= com.mysql.cj.jdbc.Driver
-spring.jpa.hibernate.ddl-auto= update
-spring.datasource.password= ${RDS_PASSWORD:root}
-spring.datasource.platform= mysql
-spring.datasource.url= jdbc:mysql://${RDS_HOSTNAME:localhost}:${RDS_PORT:3306}/${RDS_DB_NAME:microservices}
-spring.datasource.username= ${RDS_USERNAME:root}
-spring.jpa.database-platform= org.hibernate.dialect.MySQL5Dialect
+server:
+  port: 8081
+spring:
+  application:
+    name: PRODUCT_SERVICE
+  datasource:
+     password: ${RDS_PASSWORD:root}
+     url: jdbc:mysql://${RDS_HOSTNAME:localhost}:${RDS_PORT:3306}/${RDS_DB_NAME:microservices}
+     username: ${RDS_USERNAME:root}
+     platform: mysql
+     driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    properties:
+      hibernate:
+       ddl-auto: update
+       
+       
+    
 
-
+     
 
