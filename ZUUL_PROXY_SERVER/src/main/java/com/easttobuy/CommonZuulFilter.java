@@ -28,7 +28,7 @@ private Logger logger=LoggerFactory.getLogger(this.getClass());
 	@Override
 	public String filterType() {
 		// TODO Auto-generated method stub
-		return null;
+		return "pre";
 	}
 
 	@Override
