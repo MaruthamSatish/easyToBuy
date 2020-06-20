@@ -16,5 +16,4 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @RepositoryRestResource(path = "categorys", collectionResourceRel = "categorys")
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
 	Category findByCategoryId(@Param("categoryId") Integer categoryId);
-
 }
