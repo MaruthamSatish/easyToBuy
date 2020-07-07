@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: easytobuy-app
+    labels:
+        app: easytobuy-app
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: easytobuy-app
+    template:
+        metadata:
+            name: easytobuy-app
+            labels:
+                app: easytobuy-app
+        spec:
+            containers: 
+                - name: easytobuy-app
+                  image: satishlakshmireddy/category-service-api

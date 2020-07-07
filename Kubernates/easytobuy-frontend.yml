@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: easytobuy-deployment
+  labels:
+    app: easytobuy-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: easytobuy-ui
+  template:
+    metadata:
+      labels:
+        app: easytobuy-ui
+    spec:
+      containers:
+      - name: easytobuy-ui
+        image: satishlakshmireddy/easy-to-buy:latest
+        ports:
+        - containerPort: 80
